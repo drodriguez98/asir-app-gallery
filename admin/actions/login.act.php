@@ -2,30 +2,23 @@
 
 <?php
 
-  #   Includes.
-
   include dirname( dirname( dirname( __FILE__))) . "/common/utils.php";
   include dirname( dirname( dirname( __FILE__))) . "/common/config.php";
-  include dirname( dirname( dirname( __FILE__))) . "/common/mysql.php";
+  include dirname( dirname( dirname( __FILE__))) . "/common/database.php";
 
-  #   Recogemos los parametros que nos pasa el formulario /includes/login.inc.php por POST. Podemos comprobar que recibimos los datos con debug ($_POST).
 
-  $email_login = $_POST['email_login'];
-  $login_password = md5 ($_POST['login_password']);
+  $email = $_POST['email'];
+  $login = md5 ($_POST['password']);
 
-  #   Utilizamos las funciones que creamos en /common/mysql.php para conectarnos a la base de datos y comprobar si existe un email con la contraseña introducida.
+  $connection = connect($config['database']);
 
-  $connection = Connect($config['database']);
+  $sqlAuthors = "select * from authors where email = '".$email."' and password = '".$login."'";
 
-  $sql = "select * from autores where email = '".$email_login."' and password = '".$login_password."'";
+  $rowsAuthors = executeQuery($sqlAuthors, $connection);
 
-  $rows = ExecuteQuery($sql, $connection);
+  close($connection);
 
-  Close($connection);
-
-  #   Si no hay coincidencias redirigimos a una página de error. Si no, iniciamos la sesión y redirigimos a la página de listados.
-
-  if (empty($rows)) {
+  if (empty($rowsAuthors)) {
 
     header ("location: ../error.php?error=1");
 
@@ -33,8 +26,8 @@
 
     session_start();
 
-    $_SESSION['id'] = $rows[0]['id'];
-    $_SESSION['email'] = $rows[0]['email'];
+    $_SESSION['id'] = $rowsAuthors[0]['id'];
+    $_SESSION['email'] = $rowsAuthors[0]['email'];
     $_SESSION['session_id'] = session_id();
 
     header ("location: ../home.php?page=listado");

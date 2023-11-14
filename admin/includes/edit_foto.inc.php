@@ -1,37 +1,20 @@
-<!--  Página para editar las imagenes procesado por /actions/edit_foto.act.php  -->
-
 <?php
-
-  #   Includes.
 
   include dirname(dirname(dirname( __FILE__))) . "/common/utils.php";
   include dirname(dirname(dirname( __FILE__))) . "/common/config.php";
-  include dirname(dirname(dirname( __FILE__))) . "/common/mysql.php";
+  include dirname(dirname(dirname( __FILE__))) . "/common/database.php";
 
-  #   Conectamos con la base de datos, guardamos los autores para el select en $rows y la imagen en $rows_f.
+  $connection = connect($config['database']);
 
-  $connection = Connect($config['database']);
+  $sqlAuthors = "select * from authors order by name asc";
+  $rowsAuthors = executeQuery( $sqlAuthors, $connection);
 
-  $sql = "select * from autores order by nombre asc";
+  $sqlImages = "select * from images where imageId = " . $_GET['imageId'];
+  $rowsImages = executeQuery($sqlImages, $connection);
 
-  $rows = ExecuteQuery( $sql, $connection);
+  $image = $rowsImages[0];
 
-  $sql_foto = "select * from imagenes where id = " . $_GET['id'];
-
-  $rows_f = ExecuteQuery($sql_foto, $connection);
-
-  $rows_fotos = $rows_f[0];
-
-
-  if ($rows_fotos['texto'] == 0) {
-
-    $enabled = 0;
-
-  } else {
-
-    $enabled = 1;
-
-  }
+  if ($image['text'] == 0) { $enabled = 0; } else { $enabled = 1; }
 
 ?>
 
@@ -43,7 +26,7 @@
 
       <div class="col-lg-12 text-lett">
 
-        <h2 class="mt-5">Editar foto</h2>
+        <h2 class="mt-5">Edit image</h2>
 
       </div>
   
@@ -57,23 +40,23 @@
        
         <form role="form" action="actions/edit_foto.act.php" method="post" enctype="multipart/form-data">
 
-          <input type="hidden" name="id" id="id" value="<?php echo $rows_fotos['id']; ?>">
+          <input type="hidden" name="imageId" id="imageId" value="<?php echo $image['imageId']; ?>">
 
           <div class="form-group row">
 
-            <label for="id_autor" class="col-lg-2 col-form-label">Autor</label>
+            <label for="authorId" class="col-lg-2 col-form-label">Author</label>
              
               <div class="col-lg-4 text-lett">
 
                 <!--   Mostramos las posiciones 0 y 1 (nombre e id) del listado de autores que sacamos de la base de datos en un select  -->
 
-                <select  class="form-control" name="id_autor" id="id_autor">
+                <select  class="form-control" name="authorId" id="authorId">
 
                     <?php
 
-                      foreach ($rows as $row) {
+                      foreach ($rowsAuthors as $row) {
 
-                        if ($row[0] == $rows_fotos['id_autor']) {
+                        if ($row[0] == $image['authorId']) {
 
                           echo "<option value= ".$row[0]." selected>".$row[1]."</option>";
 
@@ -95,11 +78,11 @@
 
           <div class="form-group row">
 
-            <label for="nombre" class="col-lg-2 col-form-label">Nombre</label>
+            <label for="name" class="col-lg-2 col-form-label">Name</label>
              
               <div class="col-lg-4 text-lett">
 
-                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="<?php echo $rows_fotos['nombre']; ?>">
+                <input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $image['name']; ?>">
 
             </div>
            
@@ -107,13 +90,13 @@
 
           <div class="form-group row">
 
-            <label for="fichero" class="col-lg-2 col-form-label">Fichero</label>
+            <label for="file" class="col-lg-2 col-form-label">File</label>
              
               <div class="col-lg-4 text-lett">
 
-                <input type="file" class="form-control" id="fichero" name="fichero" placeholder="">
+                <input type="file" class="form-control" id="file" name="file" placeholder="">
 
-                <?php echo $rows_fotos['archivo']; ?>
+                <?php echo $image['file']; ?>
 
             </div>
            
@@ -121,11 +104,11 @@
 
           <div class="form-group row">
 
-            <label for="tamaño" class="col-lg-2 col-form-label">Texto</label>
+            <label for="text" class="col-lg-2 col-form-label">Text</label>
              
               <div class="col-lg-4 text-lett">
 
-                <textarea rows="5" cols="60" id="texto" name="texto"><?php echo $rows_fotos['texto']; ?></textarea>
+                <textarea rows="5" cols="60" id="text" name="text"><?php echo $image['text']; ?></textarea>
 
             </div>
            
@@ -133,7 +116,7 @@
 
           <div class="form-group row">
 
-            <label for="enabled" class="col-lg-2 col-form-label">Activado</label>
+            <label for="enabled" class="col-lg-2 col-form-label">Active</label>
              
               <div class="col-lg-3 text-lett">
 
@@ -145,7 +128,7 @@
 
           <br><br>
 
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary">Edit</button>
 
         </form>
 

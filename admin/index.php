@@ -1,7 +1,5 @@
 <!--    Página principal (antes del login)     -->
 
-<!--   http://galeria.local/admin/index.php     -->
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,7 +12,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Galeria de imágenes</title>
+        <title>Gallery</title>
 
         <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
@@ -35,14 +33,12 @@
               case 'login':
 
                 #   http://galeria.local/admin/index.php?page=login
-
                 include "includes/login.inc.php";
                 break;
               
               case 'new':
 
                 #   http://galeria.local/admin/index.php?page=new
-
                 include "includes/new.inc.php";
                 break;
 
@@ -54,19 +50,7 @@
 
         <!-- Footer -->
 
-        <footer>
-
-            <div class="row">
-
-                <div class="col-lg-12">
-
-                    <p></p>
-
-                </div>
-
-            </div>
-
-        </footer>
+        <footer> <div class="row"> <div class="col-lg-12"> <p></p> </div> </div> </footer>
 
         <!-- jQuery -->
 

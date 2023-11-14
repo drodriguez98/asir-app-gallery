@@ -2,19 +2,14 @@
 
 <?php
 
-  #   Conexión con la base de datos y consulta para obtener las imágenes con la opción enabled marcada.
-
   include "common/utils.php";
   include "common/config.php";
-  include "common/mysql.php";
+  include "common/database.php";
 
-  $connection = Connect($config['database']);
-
-  $sql = "select * from imagenes where enabled = 1 order by id desc";
-
-  $rows = ExecuteQuery($sql, $connection);
-
-  Close( $connection);
+  $connection = connect($config['database']);
+  $sqlAuthors = "select * from images where enabled = 1 order by imageId desc";
+  $rowsAuthors = executeQuery($sqlAuthors, $connection);
+  close( $connection);
 
 ?>
 
@@ -24,7 +19,7 @@
 
   <head>
 
-      <title>Galería de imágenes</title>
+      <title>Gallery</title>
 
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,23 +51,13 @@
 
                   </button>
 
-                  <a class="navbar-brand" href="#">GALERÍA</a>
+                  <a class="navbar-brand" href="#">GALLERY</a>
 
               </div>
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                  <ul class="nav navbar-nav">
-
-                    <!-- Enlace a página de login -->
-                      
-                      <li>
-
-                          <a href="admin/index.php?page=login">Acceder</a>
-
-                      </li>
-
-                  </ul>
+                  <ul class="nav navbar-nav"> <li> <a href="admin/index.php?page=login">Open application</a> </li> </ul>
 
               </div>
 
@@ -86,24 +71,19 @@
 
         <div class="row">
 
-          <div class="col-lg-12">
-
-              <h1 class="page-header">Galería</h1>
-
-          </div>
+          <div class="col-lg-12"> <h1 class="page-header">Gallery</h1> </div>
 
           <?php
 
-            foreach ($rows as $row) 
+            foreach ($rowsAuthors as $row)  {
 
-            {
               echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 
                     <a class="thumbnail" href="#">
 
-                        <img class="img-responsive css_img" src="images/'.$row['archivo'].'" alt="">
+                        <img class="img-responsive css_img" src="images/'.$row['file'].'" alt="">
                         
-                    </a>'.$row['nombre'].'
+                    </a>'.$row['name'].'
 
                 </div>';
             }
@@ -118,15 +98,7 @@
 
         <footer>
 
-            <div class="row">
-
-                <div class="col-lg-12">
-
-                    <p></p>
-
-                </div>
-
-            </div>
+            <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
 
         </footer>
 

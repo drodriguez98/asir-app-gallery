@@ -2,7 +2,6 @@
 
 <!--  Se muestra en el archivo home.php   -->
 
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
   <div class="container">
@@ -18,7 +17,7 @@
 
           </button>
 
-          <a class="navbar-brand" href="/index.php">GALERÍA</a>
+          <a class="navbar-brand" href="/index.php">GALLERY</a>
 
       </div>
 
@@ -26,23 +25,11 @@
 
           <ul class="nav navbar-nav pull-right">
               
-              <li>
+              <li> <a href="home.php?page=listado">[Images]</a> </li>
 
-                  <a href="home.php?page=listado">[Imágenes]</a>
+              <li> <a href="home.php?page=autores">[Authors]</a> </li>
 
-              </li>
-
-              <li>
-
-                  <a href="home.php?page=autores">[Autores]</a>
-
-              </li>
-
-              <li>
-
-                  <a href="home.php?page=new">[Añadir foto]</a>
-
-              </li>
+              <li> <a href="home.php?page=new">[New photo]</a> </li>
 
           </ul>
 

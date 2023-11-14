@@ -3,17 +3,13 @@
 <?php
 
   include dirname( dirname( dirname( __FILE__))) . "/common/config.php";
-  include dirname( dirname( dirname( __FILE__))) . "/common/mysql.php";
+  include dirname( dirname( dirname( __FILE__))) . "/common/database.php";
 
-   # Conectamos con la base de datos para obtener todos los autores.
 
-  $connection = Connect($config['database']);
-
-  $sql = "select * from autores order by nombre asc";
-
-  $rows = ExecuteQuery($sql, $connection);
-
-  Close( $connection);
+  $connection = connect($config['database']);
+  $sqlAuthors = "select * from authors order by name asc";
+  $rowsAuthors = executeQuery($sqlAuthors, $connection);
+  close( $connection);
 
 ?>
 
@@ -21,19 +17,11 @@
 
 <script type="text/javascript">
   
-  function delete_post( id) {
+  function deleteAuthor( authorId) {
 
     var ok = confirm("¿Seguro que quieres borrar este autor? ");
     
-    if (!ok) {
-
-      return false;
-
-    } else {
-
-      location.href = "delete.php?page=autores&id=" + id;
-
-    }
+    if (!ok) { return false; } else { location.href = "delete.php?page=authors&authorId=" + authorId; }
 
   }
 
@@ -48,7 +36,7 @@
 
       <div class="col-lg-12 text-lett">
 
-        <h2 class="mt-5">Listado de autores</h2>
+        <h2 class="mt-5">Authors</h2>
 
       </div>
   
@@ -65,11 +53,11 @@
             <tr>
 
               <th scope="col">#</th>
-              <th scope="col">Nombre</th>
+              <th scope="col">Name</th>
               <th scope="col">Email</th>
-              <th scope="col">Creado</th>
-              <th scope="col">Activo</th>
-              <th scope="col">Eliminar</th>
+              <th scope="col">Created</th>
+              <th scope="col">Active</th>
+              <th scope="col">Delete</th>
 
             </tr>
 
@@ -83,7 +71,7 @@
 
               #   Mostramos los datos que sacamos de la base de datos y mostramos un icono de actividad u otro en función del estado de cada autor. Añadimos un enlace a la función delete_post que redirecciona a la página de borrado (borrando el autor con el id de esa fila).
 
-              foreach ($rows as $row) {
+              foreach ($rowsAuthors as $row) {
 
                 if ( $row['enabled'] == "1") {
 
@@ -97,13 +85,13 @@
 
                 echo '
 
-                  <td>'.$row['id'].'</td>
+                  <td>'.$row['authorId'].'</td>
                   <td>'.$row['name'].'</td>
                   <td>'.$row['email'].'</td>
                   <td>'.date( "d/m/Y H:s:i", strtotime($row['created'])).'</td>
                   <td>'.$enabled.'</td>       
                              
-                  <td><a href="#" OnClick="delete_post('.$row['id'].')"><img src="../assets/img/delete_2.png"  width=20px></a></td>
+                  <td><a href="#" OnClick="deleteAuthor('.$row['authorId'].')"><img src="../assets/img/delete_2.png"  width=20px></a></td>
                   </tr>
                 ';  
 

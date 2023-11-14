@@ -1,33 +1,21 @@
 <!--  Página que borra la imagen o autor con el id de la fila seleccionada -->
 
-<!--  Procesa los deletes de los dos listados   -->
-
 <?php
 
   include dirname(dirname( __FILE__)) . "/common/utils.php";
   include dirname(dirname( __FILE__)) . "/common/config.php";
-  include dirname(dirname( __FILE__)) . "/common/mysql.php";
-
-  #   Conectamos con la base de datos para hacer el delete en cualquiera de las dos tablas.
+  include dirname(dirname( __FILE__)) . "/common/database.php";
 
   $page = $_GET['page'];
 
-  $connection = Connect( $config['database']);
+  $connection = connect( $config['database']);
 
-  if ( $page == 'listado') {
+  if ( $page == 'listado') { $sqlAuthors  = "delete from images where imageId = " . $_GET['imageId'];
 
-    $sql  = "delete from imagenes where id = " . $_GET['id'];
+  } else { $sqlAuthors  = "delete from authors where authorId = " . $_GET['authorId']; }
 
-  } else {
-
-    $sql  = "delete from autores where id = " . $_GET['id'];
-
-  }
-
-  $return = Execute( $sql, $connection);
-
-  Close( $connection);
-
+  $return = execute( $sqlAuthors, $connection);
+  close( $connection);
   header("location: home.php?page=" . $page);
 
 ?>

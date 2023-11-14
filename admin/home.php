@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Galería-Home</title>
+        <title>Gallery - Home</title>
 
         <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">        
@@ -24,49 +24,43 @@
 
     <body>
 
-        <!--    Utilizamos un switch para redirigir a las demás páginas. De nuevo, valor se pasa y se recoge por POST.     --> 
+        <?php
 
-          <?php
+          include "includes/menu.php";
+          
+          $page = $_GET['page'];
 
-            include "includes/menu.php";
+          switch ($page) {
+
+            case 'listado':
+
+              #   http://galeria.local/admin/home.php?page=listado
+              include "actions/listado.act.php";
+              include "includes/listado.inc.php";
+              break;
+
+            case 'autores':
+
+              #   http://galeria.local/admin/home.php?page=autores
+              include "includes/listado_autores.inc.php";
+              break;
+
+            case 'new':
+
+              #   http://galeria.local/admin/home.php?page=new
+              include "includes/new_foto.inc.php";
+              break;
+
+            case 'edit':
+
+              #   http://galeria.local/admin/home.php?page=edit
+              include "includes/edit_foto.inc.php";
+              break;
             
-            $page = $_GET['page'];
+            default:
 
-            switch ($page) {
-
-              case 'listado':
-
-                #   http://galeria.local/admin/home.php?page=listado
-
-                include "actions/listado.act.php";
-                include "includes/listado.inc.php";
-                break;
-
-              case 'autores':
-
-                #   http://galeria.local/admin/home.php?page=autores
-
-                include "includes/listado_autores.inc.php";
-                break;
-
-              case 'new':
-
-                #   http://galeria.local/admin/home.php?page=new
-
-                include "includes/new_foto.inc.php";
-                break;
-
-              case 'edit':
-
-                #   http://galeria.local/admin/home.php?page=edit
-
-                include "includes/edit_foto.inc.php";
-                break;
-              
-              default:
-
-                break;
-            }
+              break;
+          }
 
           ?>
 
@@ -76,15 +70,7 @@
 
             <footer>
 
-                <div class="row">
-
-                    <div class="col-lg-12">
-
-                        <p></p>
-
-                    </div>
-
-                </div>
+                <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
 
             </footer>
 

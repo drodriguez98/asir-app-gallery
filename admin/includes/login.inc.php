@@ -10,21 +10,21 @@
       
         <form class="form-signin" method="post" action="actions/login.act.php">
 
-            <h4 class="form-signin-heading">Por favor, identifíquese:</h4>
+            <h4 class="form-signin-heading">Please identify yourself:</h4>
 
-            <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="email_login" name="email_login" class="form-control frm_login_email" placeholder="Email" required autofocus>
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" name="email" class="form-control frm_login_email" placeholder="Email" required autofocus>
 
-            <label for="inputPassword" class="sr-only">Contraseña</label>
+            <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="login_password" name="login_password" class="form-control frm_login_pass" placeholder="Contraseña" required>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             
             <br><br>
 
             <!--    Enlace a página de registro   -->
 
-            <a class="btn btn-lg btn-warning btn-block" href="index.php?page=new">Nuevo autor</a>
+            <a class="btn btn-lg btn-warning btn-block" href="index.php?page=new">New author</a>
 
         </form>
 
