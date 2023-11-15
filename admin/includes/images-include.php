@@ -4,15 +4,7 @@
 
 <script type="text/javascript">
   
-  function deleteImage(imageId) {
-
-    // var confirm = confirm("¿Seguro que quieres borrar esta imagen?");
-    
-    // if (!confirm) { return false; } else { location.href = "delete.php?page=listado&id=" + imageId; }
-  
-    location.href = "delete.php?page=images&imageId=" + imageId;
-    
-  }
+  function deleteImage(imageId) { location.href = "delete.php?page=images&imageId=" + imageId; }
 
 </script>
 
@@ -64,38 +56,26 @@
 
             <?php
 
-              if (!empty($rowsAuthors)) {
+            if (!empty($rowsAuthors)) {
 
-                foreach ($rowsAuthors as $row) {
+              foreach ($rowsAuthors as $row) {
 
-                  if ($row['enabled'] == "1") {
-
-                    $enabled = "<img src='../assets/img/activo.png'  width=20px>";
-
-                  } else {
-
-                    $enabled = "<img src='../assets/img/no_activo.png' width=20px>";
-
-                  }
+                  if ($row['enabled'] == "1") { $enabled = "<img src='../assets/img/activo.png'  width=20px>"; } else { $enabled = "<img src='../assets/img/no_activo.png' width=20px>"; }
 
                   echo '
+                      <td>'.$row['imageId'].'</td>
+                      <td>'.$row['authorId'].'</td>
+                      <td><img src="../images/'.$row['file'].'"  width=320px height=200px></td>
+                      <td>'.date("d/m/Y H:i:s", strtotime($row['created'])).'</td>
+                      <td>'.$enabled.'</td>
+                      <td><a href="home.php?page=edit&imageId='.$row['imageId'].'"><img src="../assets/img/edit.png" width=20px></a></td>
+                      <td><a href="#" OnClick="deleteImage('.$row['imageId'].')"><img src="../assets/img/delete_2.png"  width=20px></a></td>
+                      </tr>
+                  ';
 
-                    <td>'.$row['imageId'].'</td>
-                    <td>'.$row['authorId'].'</td>
-                    <td>'.$row['name'].'</td>
-                    <td>'.date( "d/m/Y H:s:i", strtotime( $row['created'])).'</td>
-                    <td>'.$enabled.'</td>
-
-                    <td><a href="home.php?page=edit&imageId='.$row['imageId'].'"><img src="../assets/img/edit.png" width=20px></a></td>
-
-                    <td><a href="#" OnClick="deleteImage('.$row['imageId'].')"><img src="../assets/img/delete_2.png"  width=20px></a></td>
-                    </tr>
-
-                  ';  
-                  
-                }
-
-              } else { echo "<tr><td colspan=7> No hay registros</td></tr>"; }
+              }
+              
+            } else { echo "<tr><td colspan=7> No hay registros</td></tr>"; }
 
             ?>
 
