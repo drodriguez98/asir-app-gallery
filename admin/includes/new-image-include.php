@@ -1,5 +1,3 @@
-<!--  Formulario para subir imágenes procesado por /actions/new_foto.act.php  -->
-
 <?php
 
   include dirname(dirname( dirname( __FILE__))) . "/common/utils.php";
@@ -26,8 +24,6 @@
 
       <div class="col-lg-10 text-left">
 
-        <!--  Formulario   -->
-
         <form role="form" action="actions/new-image-action.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
@@ -35,8 +31,6 @@
             <label for="authorId" class="col-lg-2 col-form-label">Author</label>
              
               <div class="col-lg-4 text-lett">
-
-                <!--   Mostramos las posiciones 0 y 1 (nombre e id) del listado de autores que sacamos de la base de datos en un select  -->
                 
                 <select  class="form-control" name="authorId" id="authorId"> <?php foreach ($rowsAuthors as $row) { echo "<option value= ".$row[0].">".$row[1]."</option>"; } ?> </select>
 

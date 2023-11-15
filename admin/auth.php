@@ -21,42 +21,32 @@
     </head>
 
     <body>
-
-        <!--    Utilizamos un switch para redirigir a página de login o de registro. El valor se pasa y se recoge por POST.     -->
           
-          <?php
+        <?php
 
-            $page = $_GET['page'];
+          $page = $_GET['page'];
 
-            switch ($page) {
+          switch ($page) {
 
-              case 'login':
+            case 'login':
 
-                #   http://galeria.local/admin/index.php?page=login
-                include "includes/login-include.php";
-                break;
-              
-              case 'new':
+              include "includes/login-include.php";
+              break;
+            
+            case 'new':
 
-                #   http://galeria.local/admin/index.php?page=new
-                include "includes/new-author-include.php";
-                break;
+              include "includes/new-author-include.php";
+              break;
 
-            }            
+          }            
 
-          ?>
+        ?>
     
         <hr>
 
-        <!-- Footer -->
-
         <footer> <div class="row"> <div class="col-lg-12"> <p></p> </div> </div> </footer>
 
-        <!-- jQuery -->
-
         <script src="/assets/bootstrap/js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
 
         <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 

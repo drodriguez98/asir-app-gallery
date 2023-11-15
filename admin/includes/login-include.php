@@ -1,5 +1,3 @@
-<!--    Formulario de login procesado por /actions/login.act.php     -->
-
 <div class="container">
 
   <div class="row">
@@ -20,10 +18,6 @@
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             
-            <br><br>
-
-            <!--    Enlace a página de registro   -->
-
             <a class="btn btn-lg btn-warning btn-block" href="auth.php?page=new">New author</a>
 
         </form>

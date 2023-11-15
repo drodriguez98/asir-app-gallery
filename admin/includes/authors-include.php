@@ -1,5 +1,3 @@
-<!--  Listado de autores   -->
-
 <?php
 
   include dirname( dirname( dirname( __FILE__))) . "/common/config.php";
@@ -13,8 +11,6 @@
 
 ?>
 
-<!--  Script para borrar autores del listado. Al pulsar el icono de eliminar autor se elimina el autor con ese id  -->
-
 <script type="text/javascript">
   
   function deleteAuthor( authorId) {
@@ -26,9 +22,6 @@
   }
 
 </script>
-
-
-<!--  Tabla para el listado  -->
 
   <div class="container">
 
@@ -68,8 +61,6 @@
           <tbody>
 
             <?php
-
-              #   Mostramos los datos que sacamos de la base de datos y mostramos un icono de actividad u otro en función del estado de cada autor. Añadimos un enlace a la función delete_post que redirecciona a la página de borrado (borrando el autor con el id de esa fila).
 
               foreach ($rowsAuthors as $row) {
 

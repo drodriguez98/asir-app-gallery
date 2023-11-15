@@ -1,14 +1,8 @@
-<!--  Listado de imágenes procesado por /actions/images-action.php  -->
-
-<!--  Script para borrar una imagen   -->
-
 <script type="text/javascript">
   
   function deleteImage(imageId) { location.href = "delete.php?page=images&imageId=" + imageId; }
 
 </script>
-
-<!--  Tabla para el listado  -->
 
   <div class="container">
 
@@ -74,7 +68,7 @@
                   ';
 
               }
-              
+
             } else { echo "<tr><td colspan=7> No hay registros</td></tr>"; }
 
             ?>

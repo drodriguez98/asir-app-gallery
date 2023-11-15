@@ -1,5 +1,3 @@
-<!--  http://galeria.local/admin/index.php?page=new -->
-
 <?php
 
   include dirname(dirname(dirname( __FILE__))) . "/common/utils.php";

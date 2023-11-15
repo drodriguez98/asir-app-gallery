@@ -24,65 +24,55 @@
 
     <body>
 
-        <?php
+      <?php
 
-          include "includes/menu.php";
+        include "includes/menu.php";
+        
+        $page = $_GET['page'];
+
+        switch ($page) {
+
+          case 'images':
+
+            include "actions/images-action.php";
+            include "includes/images-include.php";
+            break;
+
+          case 'authors':
+
+            include "includes/authors-include.php";
+            break;
+
+          case 'new':
+
+            include "includes/new-image-include.php";
+            break;
+
+          case 'edit':
+
+            include "includes/edit-image-include.php";
+            break;
           
-          $page = $_GET['page'];
+          default:
 
-          switch ($page) {
+            break;
+        }
 
-            case 'images':
+        ?>
 
-              #   http://galeria.local/admin/home.php?page=images
-              include "actions/images-action.php";
-              include "includes/images-include.php";
-              break;
+          <hr>
 
-            case 'authors':
+          <footer>
 
-              #   http://galeria.local/admin/home.php?page=authors
-              include "includes/authors-include.php";
-              break;
+              <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
 
-            case 'new':
+          </footer>
 
-              #   http://galeria.local/admin/home.php?page=new
-              include "includes/new-image-include.php";
-              break;
+      </div>
 
-            case 'edit':
+      <script src="/assets/bootstrap/js/jquery.js"></script>
 
-              #   http://galeria.local/admin/home.php?page=edit
-              include "includes/edit-image-include.php";
-              break;
-            
-            default:
-
-              break;
-          }
-
-          ?>
-
-            <hr>
-
-            <!-- Footer -->
-
-            <footer>
-
-                <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
-
-            </footer>
-
-        </div>
-
-        <!-- jQuery -->
-
-        <script src="/assets/bootstrap/js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-
-        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
     </body>
 

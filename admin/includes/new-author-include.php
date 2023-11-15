@@ -1,5 +1,3 @@
-<!--    Formulario de registro procesado por /actions/new.act.php    -->
-
 <div class="container">
 
   <div class="row">

@@ -1,5 +1,3 @@
-<!--   Índex principal. Redirecciona a páginas de login y registro y muestra las imágenes activadas por los usuarios admin.   -->
-
 <?php
 
   include "common/utils.php";
@@ -56,8 +54,6 @@
 
       </nav>
 
-      <!-- Page Content -->
-
       <div class="container">
 
         <div class="row">
@@ -85,8 +81,6 @@
 
           <hr>
 
-        <!-- Footer -->
-
         <footer>
 
             <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
@@ -95,11 +89,7 @@
 
       </div>
 
-      <!-- jQuery -->
-
       <script src="assets/bootstrap/js/jquery.js"></script>
-
-      <!-- Bootstrap Core JavaScript -->
 
       <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 

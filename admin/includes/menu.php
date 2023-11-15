@@ -1,7 +1,3 @@
-<!--  Menú de navegación.  -->
-
-<!--  Se muestra en el archivo home.php   -->
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
   <div class="container">

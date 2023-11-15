@@ -1,5 +1,3 @@
-<!--    http://galeria.local/admin/index.php?page=login     -->
-
 <?php
 
   include dirname( dirname( dirname( __FILE__))) . "/common/utils.php";
@@ -18,10 +16,6 @@
 
   close($connection);
 
-  // if (empty($rowsAuthors)) { header ("location: ../error.php?error=1"); } 
-  
-  //else {
-
     session_start();
 
     $_SESSION['id'] = $rowsAuthors[0]['id'];
@@ -29,7 +23,5 @@
     $_SESSION['session_id'] = session_id();
 
     header ("location: ../home.php?page=images");
-
-  //}
 
 ?>

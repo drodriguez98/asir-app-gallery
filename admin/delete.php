@@ -1,5 +1,3 @@
-<!--  Página que borra la imagen o autor con el id de la fila seleccionada -->
-
 <?php
 
   include dirname(dirname( __FILE__)) . "/common/utils.php";
@@ -10,7 +8,9 @@
 
   $connection = connect( $config['database']);
 
-  if ( $page == 'images') { $sqlAuthors  = "delete from images where imageId = " . $_GET['imageId'];
+  if ( $page == 'images') { 
+    
+    $sqlAuthors  = "delete from images where imageId = " . $_GET['imageId'];
 
   } else { $sqlAuthors  = "delete from authors where authorId = " . $_GET['authorId']; }
 

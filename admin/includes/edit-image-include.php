@@ -18,8 +18,6 @@
 
 ?>
 
-<!--    Formulario  -->
-
 <div class="container">
 
     <div class="row">
@@ -48,8 +46,6 @@
              
               <div class="col-lg-4 text-lett">
 
-                <!--   Mostramos las posiciones 0 y 1 (nombre e id) del listado de autores que sacamos de la base de datos en un select  -->
-
                 <select  class="form-control" name="authorId" id="authorId">
 
                     <?php
@@ -60,11 +56,7 @@
 
                           echo "<option value= ".$row[0]." selected>".$row[1]."</option>";
 
-                        } else {
-
-                          echo "<option value= ".$row[0].">".$row[1]."</option>";
-                          
-                        }
+                        } else { echo "<option value= ".$row[0].">".$row[1]."</option>"; }
                         
                       }
 
