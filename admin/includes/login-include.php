@@ -24,7 +24,7 @@
 
             <!--    Enlace a página de registro   -->
 
-            <a class="btn btn-lg btn-warning btn-block" href="index.php?page=new">New author</a>
+            <a class="btn btn-lg btn-warning btn-block" href="auth.php?page=new">New author</a>
 
         </form>
 

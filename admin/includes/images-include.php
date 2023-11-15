@@ -1,4 +1,4 @@
-<!--  Listado de imágenes procesado por /actions/listado.act.php  -->
+<!--  Listado de imágenes procesado por /actions/images-action.php  -->
 
 <!--  Script para borrar una imagen   -->
 
