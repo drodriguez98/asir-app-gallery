@@ -22,7 +22,7 @@
 
       <?php
 	  
-	  	include "includes/menu.php";
+	  	  include "includes/menu.php";
         
         $page = $_GET['page'];
 
