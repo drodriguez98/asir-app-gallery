@@ -25,9 +25,9 @@
 
           <ul class="nav navbar-nav pull-right">
               
-              <li> <a href="home.php?page=listado">[Images]</a> </li>
+              <li> <a href="home.php?page=images">[Images]</a> </li>
 
-              <li> <a href="home.php?page=autores">[Authors]</a> </li>
+              <li> <a href="home.php?page=authors">[Authors]</a> </li>
 
               <li> <a href="home.php?page=new">[New photo]</a> </li>
 

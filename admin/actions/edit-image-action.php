@@ -28,6 +28,6 @@
 
   close($connection);
 
-  header ("location: ../home.php?page=listado");
+  header ("location: ../home.php?page=images");
 
 ?>

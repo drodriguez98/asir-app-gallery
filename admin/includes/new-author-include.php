@@ -16,7 +16,7 @@
 
       <div class="col-lg-10 text-left"> 
 
-        <form role="form" action="actions/new.act.php" method="post">
+        <form role="form" action="actions/new-author-action.php" method="post">
 
           <div class="form-group row">
 

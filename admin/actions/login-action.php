@@ -8,7 +8,7 @@
 
 
   $email = $_POST['email'];
-  $login = md5 ($_POST['password']);
+  $login = md5($_POST['password']);
 
   $connection = connect($config['database']);
 
@@ -18,11 +18,9 @@
 
   close($connection);
 
-  if (empty($rowsAuthors)) {
-
-    header ("location: ../error.php?error=1");
-
-  } else {
+  // if (empty($rowsAuthors)) { header ("location: ../error.php?error=1"); } 
+  
+  //else {
 
     session_start();
 
@@ -30,8 +28,8 @@
     $_SESSION['email'] = $rowsAuthors[0]['email'];
     $_SESSION['session_id'] = session_id();
 
-    header ("location: ../home.php?page=listado");
+    header ("location: ../home.php?page=images");
 
-  }
+  //}
 
 ?>

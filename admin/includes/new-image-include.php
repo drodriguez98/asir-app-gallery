@@ -28,7 +28,7 @@
 
         <!--  Formulario   -->
 
-        <form role="form" action="actions/new_foto.act.php" method="post" enctype="multipart/form-data">
+        <form role="form" action="actions/new-image-action.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
 

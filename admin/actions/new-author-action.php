@@ -20,6 +20,6 @@
 
   close ($connection);
 
-  header ("location: /admin/home.php");
+  header ("location: ../home.php?page=images");
 
 ?>

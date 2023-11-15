@@ -8,7 +8,7 @@
 
     <div class="col-lg-6 form_login">
       
-        <form class="form-signin" method="post" action="actions/login.act.php">
+        <form class="form-signin" method="post" action="actions/login-action.php">
 
             <h4 class="form-signin-heading">Please identify yourself:</h4>
 

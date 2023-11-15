@@ -32,29 +32,29 @@
 
           switch ($page) {
 
-            case 'listado':
+            case 'images':
 
-              #   http://galeria.local/admin/home.php?page=listado
-              include "actions/listado.act.php";
-              include "includes/listado.inc.php";
+              #   http://galeria.local/admin/home.php?page=images
+              include "actions/images-action.php";
+              include "includes/images-include.php";
               break;
 
-            case 'autores':
+            case 'authors':
 
-              #   http://galeria.local/admin/home.php?page=autores
-              include "includes/listado_autores.inc.php";
+              #   http://galeria.local/admin/home.php?page=authors
+              include "includes/authors-include.php";
               break;
 
             case 'new':
 
               #   http://galeria.local/admin/home.php?page=new
-              include "includes/new_foto.inc.php";
+              include "includes/new-image-include.php";
               break;
 
             case 'edit':
 
               #   http://galeria.local/admin/home.php?page=edit
-              include "includes/edit_foto.inc.php";
+              include "includes/edit-image-include.php";
               break;
             
             default:

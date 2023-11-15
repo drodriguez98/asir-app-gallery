@@ -10,7 +10,7 @@
 
   $connection = connect( $config['database']);
 
-  if ( $page == 'listado') { $sqlAuthors  = "delete from images where imageId = " . $_GET['imageId'];
+  if ( $page == 'images') { $sqlAuthors  = "delete from images where imageId = " . $_GET['imageId'];
 
   } else { $sqlAuthors  = "delete from authors where authorId = " . $_GET['authorId']; }
 

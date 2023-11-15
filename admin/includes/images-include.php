@@ -10,7 +10,7 @@
     
     // if (!confirm) { return false; } else { location.href = "delete.php?page=listado&id=" + imageId; }
   
-    location.href = "delete.php?page=listado&imageId=" + imageId;
+    location.href = "delete.php?page=images&imageId=" + imageId;
     
   }
 

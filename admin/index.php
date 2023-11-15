@@ -33,13 +33,13 @@
               case 'login':
 
                 #   http://galeria.local/admin/index.php?page=login
-                include "includes/login.inc.php";
+                include "includes/login-include.php";
                 break;
               
               case 'new':
 
                 #   http://galeria.local/admin/index.php?page=new
-                include "includes/new.inc.php";
+                include "includes/new-author-include.php";
                 break;
 
             }            

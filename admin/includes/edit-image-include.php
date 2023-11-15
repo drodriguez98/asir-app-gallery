@@ -38,7 +38,7 @@
 
       <div class="col-lg-10 text-left">
        
-        <form role="form" action="actions/edit_foto.act.php" method="post" enctype="multipart/form-data">
+        <form role="form" action="actions/edit-image-action.php" method="post" enctype="multipart/form-data">
 
           <input type="hidden" name="imageId" id="imageId" value="<?php echo $image['imageId']; ?>">
 

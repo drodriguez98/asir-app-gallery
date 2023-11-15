@@ -93,7 +93,8 @@
                              
                   <td><a href="#" OnClick="deleteAuthor('.$row['authorId'].')"><img src="../assets/img/delete_2.png"  width=20px></a></td>
                   </tr>
-                ';  
+                '
+                ;  
 
               }
 
