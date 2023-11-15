@@ -1,7 +1,3 @@
-<!--    Home (despues del login)   -->
-
-<!--  http://galeria.local/admin/home.php  -->
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,19 +10,19 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Gallery - Home</title>
+        <title>Gallery</title>
 
-        <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">        
-        <link href="/assets/css/estilos.css" rel="stylesheet">
+        <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
+		    <link href="../assets/css/styles.css" rel="stylesheet">		
 
     </head>
-
+	
     <body>
 
       <?php
-
-        include "includes/menu.php";
+	  
+	  	include "includes/menu.php";
         
         $page = $_GET['page'];
 
@@ -60,18 +56,7 @@
 
         ?>
 
-          <hr>
-
-          <footer>
-
-              <div class="row"> <div class="col-lg-12"> <p></p> </div> </div>
-
-          </footer>
-
-      </div>
-
       <script src="/assets/bootstrap/js/jquery.js"></script>
-
       <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
     </body>

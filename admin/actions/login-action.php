@@ -1,9 +1,7 @@
 <?php
 
-  include dirname( dirname( dirname( __FILE__))) . "/common/utils.php";
   include dirname( dirname( dirname( __FILE__))) . "/common/config.php";
   include dirname( dirname( dirname( __FILE__))) . "/common/database.php";
-
 
   $email = $_POST['email'];
   $login = md5($_POST['password']);

@@ -1,6 +1,5 @@
 <?php
 
-  include "common/utils.php";
   include "common/config.php";
   include "common/database.php";
 
@@ -27,6 +26,7 @@
 
       <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <link href="assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
+	  <link href="assets/css/styles.css" rel="stylesheet">
 
   </head>
 
@@ -38,13 +38,7 @@
 
               <div class="navbar-header">
 
-                  <a class="navbar-brand" href="#">GALLERY</a>
-
-              </div>
-
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                  <ul class="nav navbar-nav"> <li> <a href="admin/auth.php?page=login">Open application</a> </li> </ul>
+                  <ul class="nav navbar-nav"> <li> <a href="admin/auth.php?page=login">PRIVATE AREA</a> </li> </ul>
 
               </div>
 
@@ -54,9 +48,7 @@
 
       <div class="container">
 
-        <div class="row">
-
-          <div class="col-lg-12"> <h1 class="page-header">Gallery</h1> </div>
+        <div class="row" > <div class="col-lg-12"> <h1 class="page-header">Gallery</h1>  </div>
 
           <?php
 
@@ -68,7 +60,7 @@
 
                         <img class="img-responsive css_img" src="images/'.$row['file'].'" alt="">
                         
-                    </a>'.$row['name'].'
+                    </a>
 
                 </div>';
             }

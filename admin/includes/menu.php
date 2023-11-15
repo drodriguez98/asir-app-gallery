@@ -2,11 +2,7 @@
 
   <div class="container">
 
-      <div class="navbar-header">
-
-          <a class="navbar-brand" href="home.php?page=images">GALLERY</a>
-
-      </div>
+      <div class="navbar-header"> <a class="navbar-brand" href="home.php?page=images">GALLERY</a> </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 

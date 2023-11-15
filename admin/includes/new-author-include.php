@@ -6,58 +6,26 @@
 
   </div>
 
-  <div class="row form_new">
+  <div class="col-lg-6">
 
-    <div class="col-lg-12 text-lett">
+	<form role="form" action="actions/new-author-action.php" method="post">
+	
+		<label for="name" class="sr-only"></label>
+		<input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
 
-      <div class="col-lg-2 text-left"></div>
+		<label for="email" class="sr-only"></label>
+		<input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
 
-      <div class="col-lg-10 text-left"> 
+		<label for="password" class="sr-only"></label>
+		<input type="password" id="password" name="password" class="form-control" placeholder="Password" required autofocus>
 
-        <form role="form" action="actions/new-author-action.php" method="post">
+		<label for="enabled">Enabled</label>
+		<input type="checkbox"  id="enabled" name="enabled">
 
-          <div class="form-group row">
+	  <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
 
-            <label for="name" class="col-lg-2 col-form-label">Name</label>
-             
-              <div class="col-lg-4 text-lett"> <input type="text" class="form-control" id="name" name="name" placeholder=""> </div>
-           
-          </div>
-
-          <div class="form-group row">
-
-            <label for="email" class="col-lg-2 col-form-label">Email</label>
-             
-              <div class="col-lg-6 text-lett"> <input type="text" class="form-control" id="email" name="email" placeholder=""> </div>
-             
-          </div>
-
-          <div class="form-group row">
-
-            <label for="password" class="col-lg-2 col-form-label">Password</label>
-             
-              <div class="col-lg-4 text-lett"> <input type="password" class="form-control" id="password" name="password" placeholder=""> </div>
-           
-          </div>
-
-          <div class="form-group row">
-
-            <label for="enabled" class="col-lg-2 col-form-label">Enabled</label>
-             
-              <div class="col-lg-3 text-lett"> <input type="checkbox"  id="enabled" name="enabled"> </div>
-            
-          </div>
-
-          <button type="submit" class="btn btn-primary">Add</button>
-
-        </form>
-
-      </div>
-      
-      <div class="col-lg-2 text-left"></div>
-
-    </div>
-
+	</form>
+     
   </div>
 
 </div>

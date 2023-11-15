@@ -14,9 +14,9 @@
 
         <title>Gallery</title>
 
-        <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
-        <link href="/assets/css/estilos.css" rel="stylesheet">
+        <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">  
+		<link href="../assets/css/styles.css" rel="stylesheet">		
 
     </head>
 
@@ -38,16 +38,11 @@
               include "includes/new-author-include.php";
               break;
 
-          }            
+          }     
 
         ?>
     
-        <hr>
-
-        <footer> <div class="row"> <div class="col-lg-12"> <p></p> </div> </div> </footer>
-
         <script src="/assets/bootstrap/js/jquery.js"></script>
-
         <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
     </body>
